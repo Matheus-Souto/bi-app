@@ -1,6 +1,23 @@
 'use client';
 
 export default function Footer() {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string,
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerHeight = 64; // 4rem = 64px (altura do header)
+      const elementPosition = element.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -66,6 +83,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#recursos"
+                  onClick={e => handleSmoothScroll(e, 'recursos')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Recursos
@@ -74,6 +92,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#planos"
+                  onClick={e => handleSmoothScroll(e, 'planos')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Planos
@@ -82,6 +101,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#sobre"
+                  onClick={e => handleSmoothScroll(e, 'sobre')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Sobre Nós
@@ -90,6 +110,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contato"
+                  onClick={e => handleSmoothScroll(e, 'contato')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Contato
