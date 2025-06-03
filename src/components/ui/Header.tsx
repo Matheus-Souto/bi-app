@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,12 +79,16 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
-              Entrar
-            </button>
-            <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
-              Começar Agora
-            </button>
+            <Link href="/login">
+              <button className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                Entrar
+              </button>
+            </Link>
+            <Link href="/cadastro">
+              <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                Começar Agora
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -142,12 +147,16 @@ export default function Header() {
                 Contato
               </a>
               <div className="px-3 py-2 space-y-2">
-                <button className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors">
-                  Entrar
-                </button>
-                <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                  Começar Agora
-                </button>
+                <Link href="/login">
+                  <button className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors">
+                    Entrar
+                  </button>
+                </Link>
+                <Link href="/cadastro">
+                  <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
+                    Começar Agora
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
