@@ -2,6 +2,9 @@
 
 export default function Contact() {
   const handleWhatsAppClick = () => {
+    // Proteção contra problemas de hidratação
+    if (typeof window === 'undefined') return;
+
     const phoneNumber = '5511999999999'; // Formato internacional (Brasil +55, DDD 11)
     const message = encodeURIComponent(
       'Olá! Gostaria de saber mais sobre os serviços de Business Intelligence da Bie.',
@@ -11,7 +14,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contato" className="py-20 bg-gray-50">
+    <section id="contato" className="py-12 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

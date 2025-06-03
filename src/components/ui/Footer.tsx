@@ -6,6 +6,11 @@ export default function Footer() {
     targetId: string,
   ) => {
     e.preventDefault();
+
+    // Proteção contra problemas de hidratação
+    if (typeof window === 'undefined' || typeof document === 'undefined')
+      return;
+
     const element = document.getElementById(targetId);
     if (element) {
       const headerHeight = 64; // 4rem = 64px (altura do header)
