@@ -55,7 +55,7 @@ export default function Hero() {
               <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 5+
               </div>
-              <div className="text-gray-600">Relatórios por mês com GPT</div>
+              <div className="text-gray-600">Relatórios por mês com IA</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
